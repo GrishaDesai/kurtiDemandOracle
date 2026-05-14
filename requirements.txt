@@ -1,66 +1,12 @@
-# ══════════════════════════════════════════════════════════════════
-# Kurti Demand Oracle — requirements.txt
-#
-# IMPORTANT: Streamlit Cloud uses Python 3.14 by default.
-# Python 3.14 breaks chromadb via protobuf incompatibility.
-#
-# FIX: Add a .python-version file in your repo root with content:
-#   3.11
-# This pins Streamlit Cloud to Python 3.11 which is fully compatible.
-#
-# Or add to your repo root a runtime.txt with:
-#   python-3.11.9
-# ══════════════════════════════════════════════════════════════════
-
-# ── Streamlit UI ──────────────────────────────────────────────────
-streamlit>=1.35.0,<2.0.0
-
-# ── FashionCLIP model loading ─────────────────────────────────────
-transformers>=4.40.0,<5.0.0
-torch>=2.1.0
-torchvision>=0.16.0
-
-# ── HuggingFace hub ───────────────────────────────────────────────
-huggingface-hub>=0.23.0,<1.0.0
-safetensors>=0.4.0
-
-# ── Vector database ───────────────────────────────────────────────
-# Pin chromadb to a version known to work with Python 3.11
-# chromadb>=0.6 requires protobuf>=4.x which breaks on Python 3.14
-chromadb>=0.5.0,<0.6.0
-
-# protobuf: pin to 4.x — protobuf 5.x breaks chromadb on Python 3.14
-protobuf>=4.24.0,<5.0.0
-
-# opentelemetry: pin to versions compatible with chromadb 0.5.x
-opentelemetry-api>=1.20.0,<2.0.0
-opentelemetry-sdk>=1.20.0,<2.0.0
-opentelemetry-exporter-otlp-proto-grpc>=1.20.0,<2.0.0
-
-# ── Image processing ─────────────────────────────────────────────
-Pillow>=10.0.0,<11.0.0
-
-# ── Background removal ───────────────────────────────────────────
-rembg>=2.0.50
-onnxruntime>=1.17.0,<2.0.0
-
-# ── Face detection preprocessing ─────────────────────────────────
-opencv-python-headless>=4.9.0,<5.0.0
-
-# ── Data processing ──────────────────────────────────────────────
-numpy>=1.26.0,<2.0.0
-pandas>=2.1.0,<3.0.0
-openpyxl>=3.1.0
-
-# ── HTTP requests ────────────────────────────────────────────────
-requests>=2.31.0,<3.0.0
-
-# ── Environment variables ─────────────────────────────────────────
+streamlit>=1.35.0
+numpy>=1.24.0
+pandas>=2.0.0
+requests>=2.31.0
+torch>=2.0.0
+chromadb==1.4.1
+Pillow>=10.0.0
+transformers>=4.40.0
 python-dotenv>=1.0.0
-
-# ── Tokenizer ────────────────────────────────────────────────────
-tokenizers>=0.19.0,<1.0.0
-
-# ── gRPC (required by chromadb telemetry) ────────────────────────
-grpcio>=1.59.0,<2.0.0
-grpcio-tools>=1.59.0,<2.0.0
+openpyxl>=3.1.0
+rembg>=2.0.57
+onnxruntime>=1.17.0
