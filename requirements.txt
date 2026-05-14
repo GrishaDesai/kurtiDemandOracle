@@ -10,3 +10,5 @@ python-dotenv>=1.0.0
 openpyxl>=3.1.0
 rembg>=2.0.57
 onnxruntime>=1.17.0
+protobuf>=4.25.0,<6.0.0
+grpcio>=1.60.0
